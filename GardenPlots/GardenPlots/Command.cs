@@ -24,10 +24,12 @@ namespace GardenPlots
                     List<Plot> plots;
                     FileReader fr = new FileReader(_userInput.UserInputArray[1]);
                     plots = fr.ReadFromFile();
-                    int holdfencing;
+
+                    int totalfencing;
                     Garden fencing = new Garden(plots);
-                    holdfencing = fencing.GetFencing();
-                    Console.WriteLine(holdfencing);
+                    totalfencing = fencing.GetFencing();
+                    FileWriter fw = new FileWriter(_userInput.UserInputArray[2]);
+                    fw.WriteToFile(totalfencing);
                     break;
                 case "3":
                     break;
